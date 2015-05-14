@@ -11,7 +11,7 @@ define(["require", "deep-utils/index"], function(require, utils) {
 		if (obj && obj.forEach)
 			return "array";
 		return typeof obj;
-	};
+	}
 
 	var compiler = {};
 	compiler.Shared = function(datas) {
@@ -62,7 +62,7 @@ define(["require", "deep-utils/index"], function(require, utils) {
 		}
 		if (src._deep_compiler_) {
 			if (src._clone)
-				src = src._clone()
+				src = src._clone();
 			return src._bottom(target);
 		}
 		if (src._deep_shared_) {
@@ -122,7 +122,7 @@ define(["require", "deep-utils/index"], function(require, utils) {
 			default:
 				return src;
 		}
-	}
+	};
 	compiler.abottom = function(src, target, opt) {
 		opt = opt || {};
 		if (src === null || typeof src === "undefined")
@@ -183,7 +183,6 @@ define(["require", "deep-utils/index"], function(require, utils) {
 					}
 				}
 				var copied = utils.shallowCopy(target);
-				var i = null;
 				for (i in target)
 					delete target[i];
 				for (i in src) {
@@ -198,7 +197,7 @@ define(["require", "deep-utils/index"], function(require, utils) {
 			default:
 				return target;
 		}
-	}
+	};
 
 	/**
 	 * up : merge object from up

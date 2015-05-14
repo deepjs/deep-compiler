@@ -1,20 +1,16 @@
-var gulp = require('gulp'),
-    gls = require('gulp-live-server'),
-    uglify = require('gulp-uglifyjs'),
-    rename = require("gulp-rename");
+var gulp = require('gulp');
 //___________________________________________________
-gulp.task('default', ['uglify']);
+
+gulp.task('default', ['lint']);
+gulp.task('lint', ['jslint']);
+
 //___________________________________________________
-gulp.task('serve-test', function() {
-    var server = gls.static("./test", 8287);
-    server.start();
-    //live reload changed resource(s) 
-    gulp.watch(['index.js', 'test/**/*.js'], server.notify);
-});
-//___________________________________________________
-gulp.task('uglify', function() {
-    gulp.src('index.js')
-        .pipe(uglify())
-        .pipe(rename('decompose.min.js'))
-        .pipe(gulp.dest('dist'))
+// npm i --save-dev gulp-jshint jshint-stylish
+var jshint = require('gulp-jshint'),
+    stylish = require('jshint-stylish');
+
+gulp.task('jslint', function() {
+    gulp.src(['./index.js', './lib/*.js'])
+        .pipe(jshint())
+        .pipe(jshint.reporter(stylish));
 });
