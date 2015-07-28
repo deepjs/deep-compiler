@@ -34,13 +34,13 @@ console.log(target);
 Console output : 
 ```json
 {
-	foo:true,
-	zoo:[ 4, 5, 1, 2, 3 ],
-	boom:{
-		y:"yeah",
-		x:12
+	"foo":true,
+	"zoo":[ 4, 5, 1, 2, 3 ],
+	"boom":{
+		"y":"yeah",
+		"x":12
 	},
-	bar:"hello world"
+	"bar":"hello world"
 }
 ```
 
