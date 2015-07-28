@@ -76,12 +76,12 @@ console.log(target);
 Console output : 
 ```json
 {
-	foo:false,
-	bar:"hello world",
-	zoo:[ 1, 2, 3, 4, 5 ],
-	boom:{
-		x:12,
-		y:"yeah"
+	"foo":false,
+	"bar":"hello world",
+	"zoo":[ 1, 2, 3, 4, 5 ],
+	"boom":{
+		"x":12,
+		"y":"yeah"
 	}
 }
 ```
